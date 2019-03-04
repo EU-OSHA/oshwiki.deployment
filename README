@@ -1,0 +1,6 @@
+
+Installation is complete. Now copy the template files into the wikiroot directory and modify as necessary.
+
+Parsoid is used for the Visual Editor. It can be run as follows:
+
+./node_modules/parsoid/bin/server.js -c parsoid/config.yaml

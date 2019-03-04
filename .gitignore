@@ -1,0 +1,5 @@
+mediawiki-core
+oshwiki-customization
+wikiroot/*
+package-lock.json
+node_modules
