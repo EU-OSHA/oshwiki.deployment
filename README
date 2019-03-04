@@ -1,5 +1,5 @@
 
-Installation is complete. Now copy the template files into the wikiroot directory and modify as necessary.
+After running `make`, copy the template files into the wikiroot directory and modify as necessary.
 
 Parsoid is used for the Visual Editor. It can be run as follows:
 
