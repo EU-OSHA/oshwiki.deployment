@@ -21,7 +21,7 @@ symlink: setup
 
 vendor-libraries: setup
 	# Install the vendor libraries
-	if [ ! -d "wikiroot/vendor"; then \
+	if [ ! -d "wikiroot/vendor" ]; then \
 		(cd wikiroot && composer update --no-dev);\
 		mkdir mediawiki-core/vendor && touch mediawiki-core/vendor/autoload.php; \
 	fi
