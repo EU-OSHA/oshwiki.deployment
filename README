@@ -10,7 +10,7 @@ Nginx should be configured to use serve OSHWiki from the wikiroot directory.
 
 System Requirements:
 make
-php 5
+php 7
 composer
 imagemagick
 mysql
