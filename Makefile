@@ -14,17 +14,23 @@ setup: download
 symlink: setup
 	# Symlink MediaWiki code and customizations
 	(cd wikiroot &&\
-	ln -sf ../mediawiki-core/[^v]* . &&\
-	ln -sf ../oshwiki-customization/[^L]* . &&\
+	ln -sf ../mediawiki-core/[^ve]* . &&\
+	ln -sf ../mediawiki-core/.git* . &&\
+	ln -sf ../oshwiki-customization/[^Le]* . &&\
 	ln -f ../oshwiki-customization/LocalSettings.php . &&\
-	ln -sf ../etc/*.php .)
+	ln -sf ../etc/*.php . &&\
+	mkdir -p extensions &&\
+	cd extensions &&\
+	ln -sf ../../oshwiki-customization/extensions/* . )
 
-vendor-libraries: setup
+submodules: symlink
+	# get the default mediawiki extensions etc.
+	(cd wikiroot && git submodule update --init)
+
+vendor-libraries: submodules
 	# Install the vendor libraries
-	if [ ! -d "wikiroot/vendor" ]; then \
-		(cd wikiroot && composer update --no-dev);\
-		mkdir mediawiki-core/vendor && touch mediawiki-core/vendor/autoload.php; \
-	fi
+	cp composer.local.json wikiroot/
+	(cd wikiroot && composer update --no-dev)
 
 parsoid:
 	npm install parsoid
