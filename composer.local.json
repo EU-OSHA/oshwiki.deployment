@@ -1,0 +1,7 @@
+{
+	"require": {
+        "mediawiki/semantic-media-wiki": "3.0.1",
+        "mediawiki/validator": "2.2.1",
+        "tinymighty/wiki-seo": "1.2.2"
+        }
+}
