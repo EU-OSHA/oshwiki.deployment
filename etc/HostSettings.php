@@ -21,9 +21,9 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
   // URL to the Parsoid instance
   'url' => 'http://localhost:8000',
   // Parsoid "domain", see below (optional)
-  'domain' => 'test.oshwiki.eu',
+  'domain' => 'localhost',
   // Parsoid "prefix", see below (optional)
-  'prefix' => 'test.oshwiki.eu'
+  'prefix' => 'localhost'
 );
 
 $wgSMTP = array( 
