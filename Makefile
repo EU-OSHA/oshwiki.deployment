@@ -2,10 +2,10 @@ all: download setup symlink vendor-libraries parsoid manual-configuration
 
 download:
 	if [ ! -d "mediawiki-core" ]; then \
-		git clone --branch 1.32.0-slc https://github.com/EU-OSHA/mediawiki-core.git; \
+		git clone --branch 1.31.1-slc https://github.com/EU-OSHA/mediawiki-core.git; \
 	fi
 	if [ ! -d "oshwiki-customization" ]; then \
-		git clone --branch 1.32 git@github.com/EU-OSHA/oshwiki-customization.git; \
+		git clone --branch 1.31 git@github.com/EU-OSHA/oshwiki-customization.git; \
 	fi
 
 setup: download
