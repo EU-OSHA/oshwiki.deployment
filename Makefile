@@ -11,21 +11,21 @@ download:
 setup: download
 	mkdir -p wikiroot
 
-symlink: setup
+submodules: setup
+	# get the default mediawiki extensions etc.
+	(cd mediawiki-core && git submodule update --init)
+
+symlink: submodules
 	# Symlink MediaWiki code and customizations
 	(cd wikiroot &&\
 	ln -sf ../mediawiki-core/[^ve]* . &&\
-	ln -sf ../mediawiki-core/.git* . &&\
 	ln -sf ../oshwiki-customization/[^Le]* . &&\
 	ln -f ../oshwiki-customization/LocalSettings.php . &&\
 	ln -sf ../etc/*.php . &&\
 	mkdir -p extensions &&\
 	cd extensions &&\
-	ln -sf ../../oshwiki-customization/extensions/* . )
-
-submodules: symlink
-	# get the default mediawiki extensions etc.
-	(cd wikiroot && git submodule update --init)
+	ln -sf ../../oshwiki-customization/extensions/* . &&\
+	ln -sf ../../mediawiki-core/extensions/* . )
 
 vendor-libraries: submodules
 	# Install the vendor libraries
