@@ -17,3 +17,7 @@ mysql
 python 2
 nodejs 9
 
+To migrate:
+   php maintenance/update.php
+   php extensions/SemanticMediaWiki/maintenance/populateHashField.php
+   php maintenance/runJobs.php --maxjobs 5000 # Run multiple times until complete
