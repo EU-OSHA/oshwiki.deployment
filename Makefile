@@ -1,4 +1,4 @@
-all: download setup symlink vendor-libraries parsoid manual-configuration
+all: clone pin setup symlink vendor-libraries parsoid manual-configuration
 
 clone:
 	if [ ! -d "mediawiki-core" ]; then \
