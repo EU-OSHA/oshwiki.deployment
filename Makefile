@@ -1,6 +1,6 @@
 all: download setup symlink vendor-libraries parsoid manual-configuration
 
-download:
+clone:
 	if [ ! -d "mediawiki-core" ]; then \
 		git clone --branch 1.31.1-slc https://github.com/EU-OSHA/mediawiki-core.git; \
 	fi
@@ -8,7 +8,11 @@ download:
 		git clone --branch 1.31 git@github.com:EU-OSHA/oshwiki-customization.git; \
 	fi
 
-setup: download
+pin:
+	(cd mediawiki-core && git fetch && git checkout 1.31.1-slc-1)
+	(cd oshwiki-customization && git fetch && git checkout 1.31.1-slc-1)
+
+setup: clone pin
 	mkdir -p wikiroot
 
 submodules: setup
