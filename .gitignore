@@ -3,3 +3,5 @@ oshwiki-customization
 wikiroot/*
 package-lock.json
 node_modules
+etc/HostSettings.php
+etc/secrets.php
