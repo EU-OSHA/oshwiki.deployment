@@ -1,5 +1,7 @@
 
-After running `make`, copy the template files into the wikiroot directory and modify as necessary.
+After running `make`, copy etc/HostSettings.php.example to
+etc/HostSettings.php and etc/secrets.php.example to etc/secrets.php
+and modify.
 
 Parsoid is used for the Visual Editor. It can be run as follows:
 
@@ -21,3 +23,4 @@ To migrate:
    php maintenance/update.php
    php extensions/SemanticMediaWiki/maintenance/populateHashField.php
    php maintenance/runJobs.php --maxjobs 5000 # Run multiple times until complete
+
