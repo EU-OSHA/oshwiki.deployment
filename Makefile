@@ -10,7 +10,7 @@ clone:
 
 pin:
 	(cd mediawiki-core && git fetch && git checkout 1.31.1-slc-1)
-	(cd oshwiki-customization && git fetch && git checkout 1.31.1-slc-2)
+	(cd oshwiki-customization && git fetch && git checkout 1.31.1-slc-3)
 
 setup: clone pin
 	mkdir -p wikiroot
