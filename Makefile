@@ -7,10 +7,14 @@ clone:
 	if [ ! -d "oshwiki-customization" ]; then \
 		git clone --branch 1.31 git@github.com:EU-OSHA/oshwiki-customization.git; \
 	fi
+	if [ ! -d "self-service-password" ]; then \
+		git clone --branch oshwiki git@github.com:EU-OSHA/self-service-password.git; \
+	fi
 
 pin:
 	(cd mediawiki-core && git fetch --tags && git checkout 1.31.1-slc-1)
 	(cd oshwiki-customization && git fetch --tags && git checkout 1.31.1-slc-6)
+	(cd self-service-password && git fetch --tags && git checkout 20200521-slc-1)
 
 setup: clone pin
 	mkdir -p wikiroot
