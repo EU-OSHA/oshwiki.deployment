@@ -13,8 +13,8 @@ clone:
 
 pin:
 	(cd mediawiki-core && git fetch --tags && git checkout 1.31.1-slc-2)
-	(cd oshwiki-customization && git fetch --tags && git checkout 1.31.1-slc-6)
-	(cd self-service-password && git fetch --tags && git checkout 20200521-slc-2)
+	(cd oshwiki-customization && git fetch --tags && git checkout 1.31.1-slc-7)
+	(cd self-service-password && git fetch --tags && git checkout 20200521-slc-3)
 
 setup: clone pin
 	mkdir -p wikiroot
